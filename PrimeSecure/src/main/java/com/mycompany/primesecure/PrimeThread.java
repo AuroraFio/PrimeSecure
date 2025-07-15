@@ -1,6 +1,7 @@
+package com.mycompany.primesecure;
+
 import java.util.Random;
 
-// Hilo que verifica y añade números primos a la lista
 public class PrimeThread implements Runnable {
     private final PrimeList primesList;
     private final Object lock; // Para sincronización
@@ -14,15 +15,14 @@ public class PrimeThread implements Runnable {
     public void run() {
         Random rand = new Random();
         int number;
-        // Genera y verifica un primo del 2 al 10_000
+        // Genera y verifica un primo entre 2 y 10000
         do {
             number = 2 + rand.nextInt(9999);
         } while (!PrimeList.isPrime(number));
 
-        // Sincroniza acceso a la lista
         synchronized (lock) {
             primesList.add(number);
-            lock.notify(); // Notifica otro hilo
+            lock.notify(); // Notifica a otro hilo
         }
     }
 }

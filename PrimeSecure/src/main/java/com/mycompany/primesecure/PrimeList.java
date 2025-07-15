@@ -1,7 +1,8 @@
+package com.mycompany.primesecure;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
-// Lista de números primos con validaciones y métodos extra
 public class PrimeList extends ArrayList<Integer> {
     // Verifica si el número es primo
     public static boolean isPrime(int num) {
@@ -28,16 +29,19 @@ public class PrimeList extends ArrayList<Integer> {
 
     @Override
     public boolean addAll(Collection<? extends Integer> c) {
-        for (Integer i : c) if (!isPrime(i)) throw new IllegalArgumentException("No es primo: " + i);
+        for (Integer i : c)
+            if (!isPrime(i)) throw new IllegalArgumentException("No es primo: " + i);
         return super.addAll(c);
     }
 
     @Override
     public boolean addAll(int index, Collection<? extends Integer> c) {
-        for (Integer i : c) if (!isPrime(i)) throw new IllegalArgumentException("No es primo: " + i);
+        for (Integer i : c)
+            if (!isPrime(i)) throw new IllegalArgumentException("No es primo: " + i);
         return super.addAll(index, c);
     }
 
+    // Métodos remove son normales
     @Override
     public Integer remove(int index) {
         return super.remove(index);

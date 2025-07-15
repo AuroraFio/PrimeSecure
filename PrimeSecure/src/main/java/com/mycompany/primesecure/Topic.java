@@ -1,7 +1,8 @@
+package com.mycompany.primesecure;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
-// Estructura tipo 'Topic' para pub/sub entre hilos
 public class Topic {
     private final Queue<Integer> messages = new LinkedList<>();
 

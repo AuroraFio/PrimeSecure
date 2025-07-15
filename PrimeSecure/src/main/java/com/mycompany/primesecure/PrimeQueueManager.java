@@ -1,7 +1,8 @@
+package com.mycompany.primesecure;
+
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-// Maneja una cola concurrente de tareas relacionadas con primos
 public class PrimeQueueManager {
     private final Queue<Integer> taskQueue = new ConcurrentLinkedQueue<>();
 

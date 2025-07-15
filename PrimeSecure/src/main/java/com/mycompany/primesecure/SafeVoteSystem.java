@@ -1,9 +1,10 @@
+package com.mycompany.primesecure;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-// Clase principal
 public class SafeVoteSystem {
     public static void main(String[] args) throws Exception {
         Object lock = new Object();
@@ -42,7 +43,6 @@ public class SafeVoteSystem {
         // Uso de lock para acceso seguro
         reentrantLock.lock();
         try {
-            // Agrega un primo protegido por lock
             primesList.add(29);
         } finally {
             reentrantLock.unlock();
